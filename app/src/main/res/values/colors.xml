@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#549186</color>
+    <color name="colorPrimaryDark">#B6D1C6</color>
+    <color name="colorAccent">#424242</color>
+    <color name="button_color">#549186</color>
+    <color name="mainPan">#44353166</color>
+    <color name="subPan">#11353166</color>
+
+    <color name="a_white">#ffffff</color>
+    <color name="a_black">#000000</color>
+
+    <color name ="a_graphBtn">#11ffffff</color>
+
+    <color name ="a_graph1">#5b9bd5</color>
+    <color name ="a_graph2">#7c7c7c</color>
+    <color name ="a_graph3">#008080</color>
+
+    <color name ="a_d_magenda">#ccE15151</color>
+    <color name ="a_d_orange">#ccFF7F43</color>
+    <color name ="a_d_yellow">#ccFFD452</color>
+    <color name ="a_d_green">#cc1E8E30</color>
+    <color name ="a_d_blue">#cc0096FA</color>
+
+    <color name="a_newbluesage">#b6d1c6</color>
+    <color name="a_eyeshadow">#738F99</color>
+    <color name="a_mutednavy">#544f70</color>
+    <color name="a_eyecolorlove">#549186</color>
+    <color name="a_starrynight">#353166</color>
+
+
+    <color name="a_gray9">#212121</color>
+    <color name="a_gray8">#424242</color>
+    <color name="a_gray7">#616161</color>
+    <color name="a_gray6">#757575</color>
+    <color name="a_gray5">#9e9e9e</color>
+    <color name="a_gray4">#bdbdbd</color>
+    <color name="a_gray3">#e0e0e0</color>
+    <color name="a_gray2">#eeeeee</color>
+    <color name="a_gray1">#f5f5f5</color>
+    <color name="a_gray0">#fafafa</color>
+</resources>

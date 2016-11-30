@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_white">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="3dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="2dp"
+            >
+            <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray2"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/mainPan"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:paddingLeft="5dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/frag_option_back" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text = "백그라운드 옵션"
+                    android:textColor="@color/a_gray9"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp" />
+
+            </LinearLayout>
+            <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray4"/>
+            <View android:layout_width="match_parent" android:layout_height="2dp" android:background="@color/a_gray1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="2dp">
+            <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray2"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/subPan"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="@dimen/rightDim">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text = "백그라운드 실행"
+                    android:textColor="@color/a_gray9"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/frag_option_swit_back"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+            <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray4"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/subPan"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="@dimen/rightDim">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text = "데이터 저장 모드"
+                    android:textColor="@color/a_gray9"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/switch3"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+            <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray4"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="3dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="2dp"
+            >
+            <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray2"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/mainPan"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:paddingLeft="5dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/frag_option_alarm"
+                    android:id="@+id/imageView5" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text = "알람 옵션"
+                    android:textColor="@color/a_gray9"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp" />
+
+            </LinearLayout>
+            <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray4"/>
+            <View android:layout_width="match_parent" android:layout_height="2dp" android:background="@color/a_gray1"/>
+        </LinearLayout>
+
+        <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray2"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/subPan"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="@dimen/rightDim">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text = "알람 실행"
+                android:textColor="@color/a_gray9"
+                android:textSize="17sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/frag_option_swit_alarm"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+        <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray4"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/subPan"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text = "알람 시간대"
+                android:textColor="@color/a_gray9"
+                android:textSize="17sp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp" />
+
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/frag_option_seek_alarm"
+                android:layout_weight="2"
+                />
+            <TextView
+                android:id = "@+id/frag_option_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text = "0분"
+                android:textColor="@color/a_gray9"
+                android:textSize="17sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp" />
+
+        </LinearLayout>
+        <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray4"/>
+    </LinearLayout>
+</LinearLayout>

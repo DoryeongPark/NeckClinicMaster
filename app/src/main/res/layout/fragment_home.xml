@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_white">
+
+    <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray2"/>
+    <LinearLayout
+        android:id = "@+id/frag_home_level_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/a_d_yellow"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="141dp"
+            android:layout_height="195dp"
+            app:srcCompat="@drawable/frag_home_lv3"
+            android:id="@+id/frag_home_img"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+
+            <TextView
+                android:text="Level : 3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/frag_home_lv"
+                android:textSize="25sp"
+                android:layout_marginTop="30dp"
+                android:textColor = "@color/a_gray8"/>
+
+            <TextView
+
+                android:text="조금 위험합니다!"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/frag_home_sim"
+                android:textSize="19sp"
+                android:layout_marginTop="10dp"
+                android:textColor = "@color/a_gray8"/>
+
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:text="3주간 진단 결과\n스마트폰 이용시\n평균 75도로 목을\n굽히고 있습니다."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/frag_home_spec"
+                android:textSize="17sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/a_gray7" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <View  android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/a_gray4"/>
+    <View android:layout_width="match_parent" android:layout_height="2dp" android:background="@color/a_gray1"
+        android:layout_marginBottom="3dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            >
+
+            <Button
+                android:id="@+id/frag_home_btn_back"
+                android:theme="@style/AppTheme.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="\n백그라운드 실행"
+                android:drawableTop="@drawable/frag_home_back"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/frag_home_btn_cam"
+                android:theme="@style/AppTheme.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="\n거북목 자가진단"
+                android:drawableTop="@drawable/frag_home_cam"
+                android:padding="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/frag_home_btn_stretch"
+                android:theme="@style/AppTheme.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="\n경추 스트레칭"
+                android:drawableTop="@drawable/frag_home_stretch"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="                   "
+                android:padding="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
