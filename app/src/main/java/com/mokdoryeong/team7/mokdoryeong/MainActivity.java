@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             String strReceived = intent.getStringExtra("DataResponse");
             ArrayList<CervicalData> dataArr = (ArrayList<CervicalData>)intent.getSerializableExtra("Data");
             if(strReceived != null && dataArr != null) {
-
                 MainActivity.this.dataArr = dataArr;
                 if(dataArr != null) {
                     Log.d("Database", "Data transferred");
@@ -193,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
             startService(new Intent(MainActivity.this, BackgroundService.class));
             loadCervicalDataFromService();
             stopService(new Intent(MainActivity.this, BackgroundService.class));
+
         }
     }
 
@@ -212,10 +212,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        if(BackgroundService.isChecked)
-            startService(new Intent(MainActivity.this, BackgroundService.class));
-
-        unregisterReceiver(dataResponseReceiver);
     }
 
 }

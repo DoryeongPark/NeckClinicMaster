@@ -140,6 +140,8 @@ public class FragmentHome extends Fragment {
             frag_home_btn_back.setText("\n백그라운드 실행");
         }
 
+        setAverageAngle(angle);
+
     }
 
     public void setAverageAngle(int averageAngle){
