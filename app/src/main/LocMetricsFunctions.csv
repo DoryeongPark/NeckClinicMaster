@@ -1,0 +1,4 @@
+File,Function,LOC,SLOC-P,SLOC-L,MVG,BLOC,C&SLOC,CLOC,CWORD
+C:\Users\zzada\Documents\GitHub\NeckClinicMaster\app\src\main\jni\com_mokdoryeong_team7_mokdoryeong_OpencvRoutine.cpp,"Java_com_mokdoryeong_team7_mokdoryeong_OpencvRoutine_nonFrontalFaceDetection(JNIEnv* env, jclass jcls, jlong addrRgba, jint x1, jint y1, jint x2, jint y2)",38,26,27,2,10,0,2,10,
+C:\Users\zzada\Documents\GitHub\NeckClinicMaster\app\src\main\jni\com_mokdoryeong_team7_mokdoryeong_OpencvRoutine.cpp,"detectNonfrontalFace(Mat& frame, int& x1, int& y1, int& x2, int& y2)",48,31,27,5,16,0,1,3,
+C:\Users\zzada\Documents\GitHub\NeckClinicMaster\app\src\main\jni\com_mokdoryeong_team7_mokdoryeong_OpencvRoutine.cpp,"Java_com_mokdoryeong_team7_mokdoryeong_OpencvRoutine_detectNeckPoints(JNIEnv* env, jclass jcls, jlong addr, jint faceStartPointX, jint faceStartPointY, jint neckStartPointX, jint neckStartPointY)",123,92,68,26,28,0,3,11,

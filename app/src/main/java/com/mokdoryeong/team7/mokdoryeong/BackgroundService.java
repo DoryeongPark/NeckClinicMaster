@@ -23,8 +23,8 @@ import org.joda.time.DateTime;
 
 public class BackgroundService extends Service {
 
+    public static boolean isChecked = false;
     public static boolean isAlive = false;
-
     public static boolean isAlarmOn = false;
     public static int alarmSeconds = 10;
 

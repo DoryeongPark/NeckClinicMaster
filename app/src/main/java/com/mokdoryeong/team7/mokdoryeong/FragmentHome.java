@@ -76,23 +76,25 @@ public class FragmentHome extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if(BackgroundService.isAlive)
+                if(BackgroundService.isChecked)
                 {
                     Toast.makeText(getActivity(),"WidgetService 중지", Toast.LENGTH_SHORT).show();
-                    getActivity().stopService(new Intent(getActivity(), BackgroundService.class));
+                    BackgroundService.isChecked = false;
 
                     frag_home_btn_back.setCompoundDrawablesWithIntrinsicBounds(null, frag_home_back, null, null);
                     frag_home_btn_back.setText("\n백그라운드 실행");
                 }
                 else {
                     Toast.makeText(getActivity(),"WidgetService 시작", Toast.LENGTH_SHORT).show();
-                    getActivity().startService(new Intent(getActivity(), BackgroundService.class));
+                    BackgroundService.isChecked = true;
 
                     frag_home_btn_back.setCompoundDrawablesWithIntrinsicBounds(null, frag_home_back_none, null, null);
                     frag_home_btn_back.setText("\n백그라운드 중지");
                 }
             }
         });
+
+
 
         Button frag_home_btn_cam = (Button) rootView.findViewById(R.id.frag_home_btn_cam);
         frag_home_btn_cam.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +134,7 @@ public class FragmentHome extends Fragment {
 
     public void update()
     {
-        if(BackgroundService.isAlive)
+        if(BackgroundService.isChecked)
         {
             frag_home_btn_back.setCompoundDrawablesWithIntrinsicBounds(null, frag_home_back_none, null, null);
             frag_home_btn_back.setText("\n백그라운드 중지");

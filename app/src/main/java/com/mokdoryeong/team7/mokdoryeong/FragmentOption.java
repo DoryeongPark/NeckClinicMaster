@@ -40,20 +40,20 @@ public class FragmentOption extends Fragment {
         frag_option_sec.setText(BackgroundService.alarmSeconds + "초");
         frag_option_seek_alarm.setProgress((int)(((float)(BackgroundService.alarmSeconds - 10)) / 3.0f * 10.0f));
 
-        if (BackgroundService.isAlive == false)
-            frag_option_switch_back.setChecked(false);
-        else
+        if (BackgroundService.isChecked)
             frag_option_switch_back.setChecked(true);
+        else
+            frag_option_switch_back.setChecked(false);
 
         frag_option_switch_back.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     Toast.makeText(getActivity(), "WidgetService 시작", Toast.LENGTH_SHORT).show();
-                    getActivity().startService(new Intent(getActivity(), BackgroundService.class));
+                    BackgroundService.isChecked = true;
                 } else {
                     Toast.makeText(getActivity(), "WidgetService 중지", Toast.LENGTH_SHORT).show();
-                    getActivity().stopService(new Intent(getActivity(), BackgroundService.class));
+                    BackgroundService.isChecked = false;
                 }
             }
         });
@@ -69,14 +69,6 @@ public class FragmentOption extends Fragment {
                 else {
                     frag_option_seek_alarm.setEnabled(false);
                     BackgroundService.isAlarmOn = false;
-                }
-
-                if(BackgroundService.isAlive){
-                    getActivity().stopService(new Intent(getActivity(), BackgroundService.class));
-                    getActivity().startService(new Intent(getActivity(), BackgroundService.class));
-                }else{
-                    getActivity().startService(new Intent(getActivity(), BackgroundService.class));
-                    getActivity().stopService(new Intent(getActivity(), BackgroundService.class));
                 }
 
             }
@@ -96,13 +88,8 @@ public class FragmentOption extends Fragment {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 BackgroundService.alarmSeconds = ((int)((seekBar.getProgress() / 100.0f) * 30.0f)) + 10;
                 Log.d("Alarmer", BackgroundService.alarmSeconds + " ");
-                if(BackgroundService.isAlive){
-                    getActivity().stopService(new Intent(getActivity(), BackgroundService.class));
-                    getActivity().startService(new Intent(getActivity(), BackgroundService.class));
-                }else{
-                    getActivity().startService(new Intent(getActivity(), BackgroundService.class));
-                    getActivity().stopService(new Intent(getActivity(), BackgroundService.class));
-                }
+                getActivity().startService(new Intent(getActivity(), BackgroundService.class));
+                getActivity().stopService(new Intent(getActivity(), BackgroundService.class));
             }
         });
 
@@ -115,11 +102,9 @@ public class FragmentOption extends Fragment {
     }
 
     public void update() {
-        if (BackgroundService.isAlive) {
+        if (BackgroundService.isChecked)
             frag_option_switch_back.setChecked(true);
-
-        } else {
+        else
             frag_option_switch_back.setChecked(false);
-        }
     }
 }

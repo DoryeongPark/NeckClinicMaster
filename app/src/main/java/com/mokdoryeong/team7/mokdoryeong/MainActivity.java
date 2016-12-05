@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     averageAngle /= count;
                     fragmentGraph.setData(dataArr);
-                    fragmentHome.angle = 30;//averageAngle;
+                    fragmentHome.angle = averageAngle;
                     fragmentHome.update();
                 }
                 Log.d("Database", strReceived);
@@ -169,25 +170,6 @@ public class MainActivity extends AppCompatActivity {
         main_tabs.getTabAt(2).setIcon(icons.get(2));
     }
 
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(BackgroundService.isAlive == false){//This is for initial data of Graph view
-            startService(new Intent(MainActivity.this, BackgroundService.class));
-            loadCervicalDataFromService();
-            stopService(new Intent(MainActivity.this, BackgroundService.class));
-        }else {
-            loadCervicalDataFromService();
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        unregisterReceiver(dataResponseReceiver);
-    }
-
     private void loadCervicalDataFromService(){
         registerReceiver(dataResponseReceiver,
                 new IntentFilter("com.mokdoryeong.team7.SEND_GRAPH_DATA_RESPONSE"));
@@ -200,5 +182,40 @@ public class MainActivity extends AppCompatActivity {
         return dataArr;
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(BackgroundService.isAlive){
+            loadCervicalDataFromService();
+            stopService(new Intent(MainActivity.this, BackgroundService.class));
+        }else {
+            startService(new Intent(MainActivity.this, BackgroundService.class));
+            loadCervicalDataFromService();
+            stopService(new Intent(MainActivity.this, BackgroundService.class));
+        }
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if(BackgroundService.isChecked) {
+            startService(new Intent(MainActivity.this, BackgroundService.class));
+            loadCervicalDataFromService();
+        }
+
+        unregisterReceiver(dataResponseReceiver);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(BackgroundService.isChecked)
+            startService(new Intent(MainActivity.this, BackgroundService.class));
+
+    }
 
 }
