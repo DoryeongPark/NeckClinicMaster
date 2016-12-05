@@ -80,27 +80,23 @@ public class FragmentHome extends Fragment {
                 {
                     Toast.makeText(getActivity(),"WidgetService 중지", Toast.LENGTH_SHORT).show();
                     BackgroundService.isChecked = false;
-
                     frag_home_btn_back.setCompoundDrawablesWithIntrinsicBounds(null, frag_home_back, null, null);
                     frag_home_btn_back.setText("\n백그라운드 실행");
                 }
                 else {
                     Toast.makeText(getActivity(),"WidgetService 시작", Toast.LENGTH_SHORT).show();
                     BackgroundService.isChecked = true;
-
                     frag_home_btn_back.setCompoundDrawablesWithIntrinsicBounds(null, frag_home_back_none, null, null);
                     frag_home_btn_back.setText("\n백그라운드 중지");
                 }
             }
         });
 
-
-
         Button frag_home_btn_cam = (Button) rootView.findViewById(R.id.frag_home_btn_cam);
         frag_home_btn_cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DiagnosisCreator.class);
+                Intent intent = new Intent(getActivity(), DiagnosisIntro.class);
                 startActivity(intent);
             }
         });
@@ -166,7 +162,7 @@ public class FragmentHome extends Fragment {
                 frag_home_level_background.setBackgroundColor(Color.argb(0xcc,0xE1,0x51,0x51));
                 break;
         }
-        frag_home_lv.setText("Level : "+(point+1));
+        frag_home_lv.setText("Level : " + (point + 1));
         frag_home_img.setImageDrawable(lv_img.get(point));
         frag_home_sim.setText(lv_str[point]);
         frag_home_spec.setText(lv_str_specific[point]);

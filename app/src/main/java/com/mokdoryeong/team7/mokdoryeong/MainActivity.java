@@ -196,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -216,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
         if(BackgroundService.isChecked)
             startService(new Intent(MainActivity.this, BackgroundService.class));
 
+        unregisterReceiver(dataResponseReceiver);
     }
 
 }

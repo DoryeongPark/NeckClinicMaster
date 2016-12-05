@@ -6,7 +6,7 @@
     android:id="@+id/activity_intro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.neckclinicmaster.IntroActivity"
+    tools:context="com.mokdoryeong.team7.mokdoryeong.IntroActivity"
     android:background="@color/colorPrimary">
 
     <LinearLayout
