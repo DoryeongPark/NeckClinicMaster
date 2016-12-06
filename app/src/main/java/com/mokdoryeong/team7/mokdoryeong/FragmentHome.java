@@ -102,7 +102,6 @@ public class FragmentHome extends Fragment {
                 isOpeningActivity = true;
                 Intent intent = new Intent(getActivity(), DiagnosisIntro.class);
                 startActivity(intent);
-                isOpeningActivity = false;
             }
         });
 
@@ -113,7 +112,6 @@ public class FragmentHome extends Fragment {
                 isOpeningActivity = true;
                 Intent intent = new Intent(getActivity(), VideoActivity.class);
                 startActivity(intent);
-                isOpeningActivity = false;
             }
         });
 
@@ -179,6 +177,9 @@ public class FragmentHome extends Fragment {
 
     public boolean isOpeningActivity(){
         return isOpeningActivity;
+    }
+    public void setIsOpeningActivity(boolean flag){
+        isOpeningActivity = flag;
     }
 
 }

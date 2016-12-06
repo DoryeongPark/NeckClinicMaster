@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(BackgroundService.isChecked) {
             if(fragmentHome.isOpeningActivity()) {
+                fragmentHome.setIsOpeningActivity(false);
                 return;
             }
             startService(new Intent(MainActivity.this, BackgroundService.class));

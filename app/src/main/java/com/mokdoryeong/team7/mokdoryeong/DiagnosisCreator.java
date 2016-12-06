@@ -156,6 +156,8 @@ public class DiagnosisCreator extends Activity implements CameraBridgeViewBase.C
         if(javaCameraView != null)
             javaCameraView.disableView();
 
+        finish();
+
     }
 
     @Override
