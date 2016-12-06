@@ -11,6 +11,10 @@ public class CervicalData implements Serializable {
     private float averageAngle;
     private float cervicalRiskIndex;
 
+    public CervicalData(){
+        startTime = null;
+    }
+
     public CervicalData(DateTime startTime, DateTime finishTime, float averageAngle){
         this.startTime = startTime;
         this.finishTime = finishTime;
@@ -57,7 +61,7 @@ public class CervicalData implements Serializable {
             return true;
     }
 
-    public String getTitle()
+    public String getAllTimeString()
     {
         return
                 startTime.getYear() + "년 " +
@@ -68,6 +72,15 @@ public class CervicalData implements Serializable {
                         startTime.getSecondOfMinute() + "초";
 
     }
+
+    public String getHourTimeString(){
+        return
+                startTime.getYear() + "년 " +
+                        startTime.getMonthOfYear() + "월 " +
+                        startTime.getDayOfMonth() + "일 " +
+                        startTime.getHourOfDay() + "시 ";
+    }
+
     public String getSpecificString()
     {
         int sec = startTime.getSecondOfDay()- finishTime.getSecondOfDay();
@@ -76,9 +89,31 @@ public class CervicalData implements Serializable {
         int hour = min/60;
         min = min % 60;
         String str = "기간 : "+hour+"시-"+min+"분-"+sec+"초\n";
-        str+="평균목각도 : "+averageAngle+"\n";
+        str+="평균목각도 : "+(int)averageAngle+"\n";
         str+="목부담레벨 : "+cervicalRiskIndex+"\n";
         return str;
+    }
+
+    public void add(CervicalData c){
+
+        if(startTime == null){
+            startTime = c.startTime;
+            finishTime = c.finishTime;
+            averageAngle = c.averageAngle;
+            cervicalRiskIndex = c.cervicalRiskIndex;
+            return;
+        }
+
+        if(startTime.isAfter(c.getStartTime().getMillis())){
+            startTime = c.getStartTime();
+        }
+
+        if(finishTime.isBefore(c.getFinishTime().getMillis())){
+            finishTime = c.getFinishTime();
+        }
+
+        averageAngle = averageAngle + c.getAverageAngle() / 2.0f;
+        cervicalRiskIndex = cervicalRiskIndex + c.getCervicalRiskIndex() / 2.0f;
     }
 
 }

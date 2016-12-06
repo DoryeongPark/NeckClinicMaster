@@ -29,9 +29,7 @@ public class FragmentGraph extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_graph, container, false);
-
         frag_graph_list = (ExpandableListView) rootView.findViewById(R.id.frag_graph_list);
-
         prepareListData();
 
         frag_graph_list_adapter = new ExpandableListAdapter(getActivity(), listDataHeader, listDataChild);
@@ -51,17 +49,37 @@ public class FragmentGraph extends Fragment {
 
         int count = 0;
         ArrayList<CervicalData> dataArr = ((MainActivity)getActivity()).dataArr;
-        if(dataArr != null) {
-            for (CervicalData c : dataArr) {
-                if (c.getFinishTime().isBefore(DateTime.now().minusHours(6)))
+
+        if(dataArr != null){
+            float averageAngle = 0.0f;
+            float averageLevel = 0.0f;
+
+            int previousHour = dataArr.get(0).getStartTime().getHourOfDay();
+            CervicalData timeSum = new CervicalData();
+
+            for(CervicalData c : dataArr){
+                if (c.getFinishTime().isBefore(DateTime.now().minusHours(6))) {
+                    listDataHeader.add(timeSum.getHourTimeString());
+                    List<String> specific_str = new ArrayList<String>();
+                    specific_str.add(timeSum.getSpecificString());
+                    listDataChild.put(listDataHeader.get(count), specific_str);
                     break;
-                listDataHeader.add(c.getTitle());
-                List<String> specific_str= new ArrayList<String>();
-                specific_str.add(c.getSpecificString());
-                listDataChild.put(listDataHeader.get(count), specific_str);
-                count++;
+                }
+                if(previousHour != c.getStartTime().getHourOfDay()){
+                    listDataHeader.add(timeSum.getHourTimeString());
+                    List<String> specific_str = new ArrayList<String>();
+                    specific_str.add(timeSum.getSpecificString());
+                    listDataChild.put(listDataHeader.get(count), specific_str);
+                    timeSum = c;
+                    ++count;
+                }else {
+                    timeSum.add(c);
+                }
+                previousHour = c.getStartTime().getHourOfDay();
+
             }
         }
+
     }
 
     public void update() {}
