@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     //Data from database
     public ArrayList<CervicalData> dataArr;
     private int averageAngle;
-
     TextView main_top_text;
 
     ArrayList<Drawable> icons = new ArrayList<Drawable>();
@@ -192,7 +191,6 @@ public class MainActivity extends AppCompatActivity {
             startService(new Intent(MainActivity.this, BackgroundService.class));
             loadCervicalDataFromService();
             stopService(new Intent(MainActivity.this, BackgroundService.class));
-
         }
     }
 
@@ -201,8 +199,12 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
 
         if(BackgroundService.isChecked) {
+            if(fragmentHome.isOpeningActivity()) {
+                return;
+            }
             startService(new Intent(MainActivity.this, BackgroundService.class));
             loadCervicalDataFromService();
+
         }
 
         unregisterReceiver(dataResponseReceiver);

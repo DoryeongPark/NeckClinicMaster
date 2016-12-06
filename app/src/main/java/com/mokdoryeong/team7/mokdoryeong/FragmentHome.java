@@ -22,6 +22,9 @@ import java.util.ArrayList;
 
 
 public class FragmentHome extends Fragment {
+
+    private boolean isOpeningActivity = false;
+
     Button frag_home_btn_back;
     Drawable frag_home_back;
     Drawable frag_home_back_none;
@@ -96,8 +99,10 @@ public class FragmentHome extends Fragment {
         frag_home_btn_cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                isOpeningActivity = true;
                 Intent intent = new Intent(getActivity(), DiagnosisIntro.class);
                 startActivity(intent);
+                isOpeningActivity = false;
             }
         });
 
@@ -105,8 +110,10 @@ public class FragmentHome extends Fragment {
         frag_home_btn_stretch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                isOpeningActivity = true;
                 Intent intent = new Intent(getActivity(), VideoActivity.class);
                 startActivity(intent);
+                isOpeningActivity = false;
             }
         });
 
@@ -169,4 +176,9 @@ public class FragmentHome extends Fragment {
         frag_home_sim.setText(lv_str[point]);
         frag_home_spec.setText(lv_str_specific[point]);
     }
+
+    public boolean isOpeningActivity(){
+        return isOpeningActivity;
+    }
+
 }
