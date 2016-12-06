@@ -112,8 +112,8 @@ public class CervicalData implements Serializable {
             finishTime = c.getFinishTime();
         }
 
-        averageAngle = averageAngle + c.getAverageAngle() / 2.0f;
-        cervicalRiskIndex = cervicalRiskIndex + c.getCervicalRiskIndex() / 2.0f;
+        averageAngle = (averageAngle + c.getAverageAngle()) / 2.0f;
+        cervicalRiskIndex = (cervicalRiskIndex + c.getCervicalRiskIndex()) / 2.0f;
     }
 
 }
