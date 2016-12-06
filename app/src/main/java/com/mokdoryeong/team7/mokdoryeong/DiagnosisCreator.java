@@ -89,6 +89,7 @@ public class DiagnosisCreator extends Activity implements CameraBridgeViewBase.C
         targetView.setLayoutParams(margin);
     }
 
+
     private void loadGuideView(){
         if(guideViewPlatform != null)
             mainLayout.removeView(guideViewPlatform);
