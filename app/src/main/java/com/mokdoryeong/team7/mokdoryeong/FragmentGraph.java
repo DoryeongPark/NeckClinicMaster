@@ -59,6 +59,8 @@ public class FragmentGraph extends Fragment {
 
             for(CervicalData c : dataArr){
                 if (c.getFinishTime().isBefore(DateTime.now().minusHours(6))) {
+                    if(timeSum.getStartTime() == null)
+                        break;
                     listDataHeader.add(timeSum.getHourTimeString());
                     List<String> specific_str = new ArrayList<String>();
                     specific_str.add(timeSum.getSpecificString());

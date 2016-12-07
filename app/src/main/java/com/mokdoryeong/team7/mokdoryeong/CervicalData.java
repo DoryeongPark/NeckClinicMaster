@@ -83,7 +83,7 @@ public class CervicalData implements Serializable {
 
     public String getSpecificString()
     {
-        int sec = startTime.getSecondOfDay()- finishTime.getSecondOfDay();
+        int sec = startTime.getSecondOfDay() - finishTime.getSecondOfDay();
         int min = sec/60;
         sec = sec%60;
         int hour = min/60;
